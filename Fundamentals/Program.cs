@@ -29,7 +29,7 @@ class Program
         //Variables c = new Variables(roll, name, stream);
         //Console.WriteLine(c.ToString());
 
-        //Operators
+
         //Operators op1 = new Operators(10, 20);
         ////Operators op2 = new Operators(10,20);
         //Operators op2 = new Operators(10, 30);
@@ -37,8 +37,12 @@ class Program
         //Console.WriteLine(op1.Equals(op2));
 
         //TypeConversion
-        TypeConversion.implicitTypeConversion();
-        TypeConversion.explicitTypeConversion();
+        //TypeConversion.implicitTypeConversion();
+        //TypeConversion.explicitTypeConversion();
+
+        Conditionals cond = new Conditionals();
+        cond.ifBlock();
+        cond.ifElseIFBLock();
         
     }
 }

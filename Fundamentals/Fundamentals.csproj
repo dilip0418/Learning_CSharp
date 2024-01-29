@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Conditionals.cs" />
     <Compile Include="TypeConversion.cs" />
     <Compile Include="Variables.cs" />
     <Compile Include="Operators.cs" />
