@@ -40,9 +40,28 @@ class Program
         //TypeConversion.implicitTypeConversion();
         //TypeConversion.explicitTypeConversion();
 
-        Conditionals cond = new Conditionals();
-        cond.ifBlock();
-        cond.ifElseIFBLock();
-        
+
+        //Conditionals -[if,if-else, if-elseif]
+        //Conditionals cond = new Conditionals();
+        //cond.ifBlock();
+        //cond.ifElseIFBLock();
+
+        //Conditionals -[switch, break]
+        //cond.SwitchStatement();
+
+
+        //Loops
+        Loops loop = new Loops();
+
+
+        //loop.whileLoop(1234);
+        //loop.doWhileLoop();
+        //loop.forLoop();
+        //loop.forEachLoop();
+        int start = int.Parse(Console.ReadLine());
+        int end = int.Parse(Console.ReadLine());
+        for(int i = start; i <= end; i++)
+            if (loop.isPrime(i))
+                Console.WriteLine(i);
     }
 }

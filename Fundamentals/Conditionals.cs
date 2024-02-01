@@ -33,4 +33,22 @@ public class Conditionals
             Console.WriteLine("The value is greater than 10");
         }
     }
+
+    public void SwitchStatement()
+    {
+        Console.WriteLine("Enter any number:");
+        int n = int.Parse(Console.ReadLine());
+
+        switch (n)
+        {
+            case 10:
+            case 20:
+            case 30:
+                Console.WriteLine("Your number is {0}", n);
+                break;
+            default:
+                Console.WriteLine("Your number is not 10, 20 or 30...");
+                break;
+        }
+    }
 }
