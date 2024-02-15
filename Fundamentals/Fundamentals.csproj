@@ -46,6 +46,8 @@
   <ItemGroup>
     <Compile Include="Conditionals.cs" />
     <Compile Include="Loops.cs" />
+    <Compile Include="MethodParameters.cs" />
+    <Compile Include="Methods.cs" />
     <Compile Include="TypeConversion.cs" />
     <Compile Include="Variables.cs" />
     <Compile Include="Operators.cs" />
