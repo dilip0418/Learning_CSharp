@@ -53,18 +53,12 @@ public class Loops
     //program to check whether a number is prime or not.
     public bool isPrime(int number)
     {
-        bool result = false;
-
-        for(int i = 2; i <= Math.Sqrt(number); i++)
+        for(int i = 2; i*i <= number; i++)
         {
-            if (number % i != 0)
-                result = true;
-            else
-            {
-                result = false;
-                break;
-            }
+            if (number % i == 0)
+                return false;
+            
         }
-        return result;
+        return true;
     }
 }
