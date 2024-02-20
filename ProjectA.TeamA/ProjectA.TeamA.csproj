@@ -4,18 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5DA27323-ACC9-4971-9799-E7E5E8BDAD45}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{196283E8-D2A2-4E63-83F3-8531EEFE32B7}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Fundamentals</RootNamespace>
-    <AssemblyName>Fundamentals</AssemblyName>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <RootNamespace>ProjectA.TeamA</RootNamespace>
+    <AssemblyName>ProjectA.TeamA</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -25,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -44,28 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Conditionals.cs" />
-    <Compile Include="Loops.cs" />
-    <Compile Include="MethodParameters.cs" />
-    <Compile Include="Methods.cs" />
-    <Compile Include="TypeConversion.cs" />
-    <Compile Include="Variables.cs" />
-    <Compile Include="Operators.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="ClassA.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ProjectA.TeamA\ProjectA.TeamA.csproj">
-      <Project>{196283e8-d2a2-4e63-83f3-8531eefe32b7}</Project>
-      <Name>ProjectA.TeamA</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ProjectA.TeamB\ProjectA.TeamB.csproj">
-      <Project>{55496629-0fb6-4ee0-ac57-13c770c16d62}</Project>
-      <Name>ProjectA.TeamB</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

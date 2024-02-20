@@ -1,4 +1,8 @@
 ﻿using System;
+using PATA = ProjectA.TeamA;
+using PATB = ProjectA.TeamB;
+//using ProjectA.TeamA;
+//using ProjectA.TeamB;
 
 class Program
 {
@@ -104,14 +108,53 @@ class Program
         mp.printNumbers(arr);
 
         //Invoking printNumbers method with passing arguements to it.
-        mp.printNumbers(); //if the method defination has the parameters prefixed with params keyword then we can invoke that method with/without passing the arguments
+        mp.printNumbers(); //if the method definition has the parameters prefixed with params keyword then we can invoke that method with/without passing the arguments prefixed with params keyword and always the paramenters must be mentioned after all the other parameters
      */
-        
+
+        //namespaces
+
+        //Problem that arises if you don't use namespaces
+        // ClassA.print();  Here the compiler get's confused on which class to be chosen to run because of the existence of class in both the namespaces with same name [ClassA]
 
 
+        //Calling a function present in ProjectA.TeamA namespace
+        //using fully qualified syntax
 
+        //ProjectA.TeamA.ClassA.print();
+        //ProjectA.TeamB.ClassA.print();
 
+        //using aliases
+       
+        //PATA.ClassA.print();
+        //PATB.ClassA.print();
+
+        //We can separate the namespaces into separate assemblies/projects
+
+        PATA.ClassA.print();
+        PATB.ClassA.print();
 
 
     }
 }
+
+//namespace ProjectA.TeamA
+//{
+//    class ClassA
+//    {
+//        public static void print()
+//        {
+//            Console.WriteLine("Team A print method...!");
+//        }
+//    }
+//}
+
+//namespace ProjectA.TeamB
+//{
+//    class ClassA
+//    {
+//        public static void print()
+//        {
+//            Console.WriteLine("Team B print method...!");
+//        }
+//    }
+//}
