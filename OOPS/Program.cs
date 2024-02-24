@@ -46,6 +46,15 @@ class Person
         return "First Name : " + this.FirstName + "\nLast Name : " + this._lastName + "\nAge : " + this._age + "\nNationality : " + this._nationality;
     }
 
+    public static void Greet()
+    {
+        Console.WriteLine("Hi, Howdy");
+    }
+
+    public static void Greet(string name)
+    {
+        Console.WriteLine("Hi, Howdy {0}",name);
+    }
 }
 
 //Static and instance members in C#
@@ -66,6 +75,7 @@ class Circle
 }
 
 //Inheitance in C#
+//Parent or base Class
 class Employee
 {
     public string _firstName;
@@ -87,6 +97,7 @@ class Employee
     }
 }
 
+//Child or derived classes
 class FullTimeEMployee : Employee
 {
     public float monthlySalary;
@@ -121,7 +132,62 @@ class PartTimeEMployee : Employee
         base.printFullName();
         Console.WriteLine(" " + this.hourlySalary);
     }
+
+    //Hiding base class method using "new" keyword
+    public new void printFullName()
+    {
+        Console.WriteLine(this._firstName + " " + this._lastName + " - contractor");
+    }
 }
+
+class Shape
+{
+    public string Color { get; set; }
+    public int PositionX { get; set; }
+    public int PositionY { get; set; }
+
+    public Shape(string color, int PosX, int PosY)
+    {
+        this.Color = color;
+        this.PositionX = PosX;
+        this.PositionY = PosY;
+    }
+    public virtual void Draw()
+    {
+        Console.WriteLine("Shape: Generic \nColor: {0}\nPositionX: {1}\nPositionY: {2}", this.Color, this.PositionX, this.PositionY);
+    }
+}
+
+class Rectangle : Shape
+{
+    public int Width { get; set; }
+    public int Height { get; set; }
+
+    public Rectangle(string color, int PosX, int PosY, int width, int height) : base(color, PosX, PosY)
+    {
+        this.Width = width;
+        this.Height = height;
+    }
+    public override void Draw()
+    {
+        Console.WriteLine("Shape: Rectangle\nColor: {0}\nPositionX: {1}\nPositionY: {2} with Width: {3} & Height: {4}", this.Color, this.PositionX, this.PositionY, this.Width, this.Height);
+    }
+}
+
+class Circle1 : Shape
+{
+    public int Radius { get; set; }
+
+    public Circle1(string color, int PosX, int PosY, int radius) : base(color, PosX, PosY)
+    {
+        this.Radius = radius;
+    }
+    public override void Draw()
+    {
+        Console.WriteLine("Shape: Circle\nColor: {0}\nPositionX: {1}\nPositionY: {2} with Radius: {3}", this.Color, this.PositionX, this.PositionY, this.Radius);
+    }
+}
+
 
 class Program
 {
@@ -141,18 +207,45 @@ class Program
         //float area1 = circle1.CalculateArea();
         //Console.WriteLine("The area of the circle is : {0}", area1);
 
-        FullTimeEMployee FTE = new FullTimeEMployee("Dilip", "Kumar B K", 50000);
-        //FTE.printFullName();
 
-        FTE.printFTEDetails();
 
-        PartTimeEMployee PTE = new PartTimeEMployee("Shivesh", "V G", 1500);
-        PTE.printPTEDetails();
+        //Inheritance
 
-        //In the below object the salary argument isn't passed so it'll take default value 0.0F
-        FullTimeEMployee FTE1 = new FullTimeEMployee("Ganesh","Chitriki");
+        //FullTimeEMployee FTE = new FullTimeEMployee("Dilip", "Kumar B K", 50000);
+        ////FTE.printFullName();
 
-        FTE1.printFTEDetails();
+        //FTE.printFTEDetails();
+
+        //PartTimeEMployee PTE = new PartTimeEMployee("Shivesh", "V G", 1500);
+        //PTE.printPTEDetails();
+
+        ////In the below object the salary argument isn't passed so it'll take default value 0.0F
+        //FullTimeEMployee FTE1 = new FullTimeEMployee("Ganesh","Chitriki");
+
+        //FTE1.printFTEDetails();
+
+
+        //Hiding base class methods
+        //PartTimeEMployee PTE = new PartTimeEMployee();
+        //PTE.printFullName();
+
+        //Polymorphism 
+        /*
+        List<Shape> shapes = new List<Shape>();
+        shapes.Add(new Rectangle("Red", 10, 10, 3, 5));
+        shapes.Add(new Circle1("Blue", 5, 5, 5));
+
+        foreach (Shape shape in shapes)
+            shape.Draw();
+            */
+
+
+        //Method Overloading
+        /*
+        Person.Greet();
+        Person.Greet("Martin");
+        */
+
 
     }
 }
