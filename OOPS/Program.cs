@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 
 //Classes in C#
@@ -53,7 +51,7 @@ class Person
 
     public static void Greet(string name)
     {
-        Console.WriteLine("Hi, Howdy {0}",name);
+        Console.WriteLine("Hi, Howdy {0}", name);
     }
 }
 
@@ -189,6 +187,114 @@ class Circle1 : Shape
 }
 
 
+class Animal
+{
+    private int _id;
+    private string _Name;
+    private Tuple<string, string> _Type;
+
+    //auto implementation of getters and setter properties : Compiler BTS will create the implementations for 
+    public bool isEndangered { get; set; }
+    
+    //Properties in C#
+    public int ID
+    {
+        set
+        {
+            if(value <= 0)
+            {
+                throw new Exception("Id cannot be less than or equal zero");
+            }
+            this._id = value;
+        }
+        get
+        {
+            return this._id;
+        }
+    }
+    public string Name
+    {
+        set
+        {
+            if (string.IsNullOrEmpty(value))
+                throw new Exception("Name cannot be empty");
+            this._Name = value;
+        }
+        get
+        {
+            return string.IsNullOrEmpty(this._Name) ? "No Name" : this._Name;
+        }
+    }
+
+    public Tuple<string, string> Type
+    {
+        set
+        {
+            if (value == null || string.IsNullOrEmpty(value.Item1) || string.IsNullOrEmpty(value.Item2))
+                throw new Exception("The _Type values must be a non null non empty value");
+
+            this._Type = value;
+        }
+        get
+        {
+            return string.IsNullOrEmpty(this._Type.Item1) || string.IsNullOrEmpty(this._Type.Item2) ? new Tuple<string, string>("No Type1", "No Type2") : this._Type;
+        }
+    }
+
+    public override string ToString()
+    {
+        return $"Id: {this.ID}\nName: {this.Name}\nType: {this.Type.Item1}, {this.Type.Item2}";
+    }
+
+}
+
+
+//Structures in C#
+struct Employee1
+{
+    private string _firstName;
+    private string _lastName;
+
+    public string FirstName
+    {
+        get
+        {
+            return _firstName;
+        }
+
+        set
+        {
+            _firstName = value;
+        }
+    }
+
+    public string LastName
+    {
+        get
+        {
+            return _lastName;
+        }
+
+        set
+        {
+            _lastName = value;
+        }
+    }
+
+    //parameterized constructor
+    //public Employee1(string FirstName, string LastName)
+    //{
+    //    this._firstName = FirstName;
+    //    this._lastName = LastName;
+    //}
+
+    public void printFullName()
+    {
+        Console.WriteLine(this._firstName + " " + this.LastName);
+    }
+}
+
+
 class Program
 {
     public static void Main(string[] args)
@@ -245,6 +351,40 @@ class Program
         Person.Greet();
         Person.Greet("Martin");
         */
+
+
+        //Properties in C#
+        /*
+        Animal animal = new Animal();
+        animal.ID = 101;
+        animal.Name = "Lion";
+        animal.Type = new Tuple<string,string>("Wild","Carnivores");
+
+        Console.WriteLine("Animal Details:\n{0}", animal);
+
+        Console.WriteLine("");
+
+        Animal animal2 = new Animal();
+        animal2.ID = 102;
+        animal2.Name = "Cow";
+        animal2.Type = new Tuple<string, string>("Domestic", "Herbivores");
+        Console.WriteLine(animal2);
+        */
+
+        //Structures
+        ///Structures are sealed types - a sealed entity restricts inheritance
+        //Using object initializer syntax to initialize the employee object.
+        /*
+        Employee1 employee = new Employee1()
+        {
+            FirstName= "Chris",
+            LastName = "Hemsworth"
+        };
+
+        employee.printFullName();
+        */
+
+
 
 
     }
