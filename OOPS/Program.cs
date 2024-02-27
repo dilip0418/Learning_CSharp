@@ -195,13 +195,13 @@ class Animal
 
     //auto implementation of getters and setter properties : Compiler BTS will create the implementations for 
     public bool isEndangered { get; set; }
-    
+
     //Properties in C#
     public int ID
     {
         set
         {
-            if(value <= 0)
+            if (value <= 0)
             {
                 throw new Exception("Id cannot be less than or equal zero");
             }
@@ -292,10 +292,77 @@ struct Employee1
     {
         Console.WriteLine(this._firstName + " " + this.LastName);
     }
+    //Note: structures doesn't have an explicit non parameterized constructor.
+    // Structures are value type whereas classes are reference type.
 }
 
 
-class Program
+//Interfaces in C#
+interface ICompany
+{
+    string getName();
+    void setName(string Name);
+    int getNumberOfEmployees();
+    void setNumberOfEmployees(int numberOfEmps);
+}
+
+
+interface ITest
+{
+    void test();
+}
+
+
+class TEG : ICompany, ITest
+{
+
+    private int _noOfEmployees;
+    private string _companyName;
+
+    public string getName()
+    {
+        return this._companyName;
+    }
+
+    public int getNumberOfEmployees()
+    {
+        return this._noOfEmployees;
+    }
+
+    public void setName(string Name)
+    {
+        this._companyName = Name;
+    }
+
+    public void setNumberOfEmployees(int numberOfEmps)
+    {
+        this._noOfEmployees = numberOfEmps;
+    }
+
+    public override string ToString()
+    {
+        return $"Company Name: {this.getName()}\nNo of Employees: {this.getNumberOfEmployees()}";
+    }
+
+    public void test()
+    {
+        Console.WriteLine("Test Interface method.");
+    }
+}
+
+interface I1
+{
+    void print();
+}
+
+interface I2
+{
+    void print();
+}
+
+
+
+class Program : I1, I2
 {
     public static void Main(string[] args)
     {
@@ -384,9 +451,41 @@ class Program
         employee.printFullName();
         */
 
+        //Interfaces
+        TEG teg = new TEG();
+        teg.setName("TEG Global Infrastructures Pvt Ltd");
+        teg.setNumberOfEmployees(18);
+        Console.WriteLine($"Company details:\n{teg}");
+        teg.test();
 
 
+        Program P = new Program();
 
+        //Note: Explicitly implemented methods shouldn't be prefixed with access modifiers
+        //We cannot invoke an Explicitly implemented method with the object reference, it can be done using interface reference only.
+
+        P.print(); //this will default to the print method implemented for Interface I1.
+
+        ((I2)P).print(); //type casting the object of type Program to Inteface of type I2.
+        //or
+        I2 i2 = new Program(); //As we know that a base class reference can be used to create an object of child class
+        i2.print();
+    }
+
+    //Note: A class implementing an Interface (I1) which inturn inherits another interface (I2), should implement all the methods of Interface (I1) & Interface (I2).
+
+    //Explicit impletation for interface methods
+
+    //Default method implementation - I1 inteface
+    public void print()
+    {
+        Console.WriteLine("I1 interface print method");
+    }
+
+    //Explicitly implemented method
+    void I2.print()
+    {
+        Console.WriteLine("I2 interface print mehtod");
     }
 }
 
