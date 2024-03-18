@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+using OOPS;
 
 
 
@@ -306,12 +306,10 @@ interface ICompany
     void setNumberOfEmployees(int numberOfEmps);
 }
 
-
 interface ITest
 {
     void test();
 }
-
 
 class TEG : ICompany, ITest
 {
@@ -360,9 +358,59 @@ interface I2
     void print();
 }
 
+//Abstract classes in C#
+public abstract class Vehicle
+{
+    //An abstract class can have abstract & composite methods also.
+    //An abstract class cannot be sealed.
+    //If any class has an abstract method then it must be marked as abstract.
+    //Any class inheriting the abstract class must implement all the abstract methods of the base class otherwise it should also be marked as abstract.
 
 
-class Program : I1, I2
+    public abstract void startVehicle();
+    public void honk()
+    {
+        Console.WriteLine("Vehicle Honking...!");
+    }
+
+}
+
+//The Diamond Problem
+/*
+class A
+{
+    public virtual void Print()
+    {
+        Console.WriteLine("Class A");
+    }
+}
+
+class B : A
+{
+    public override void Print()
+    {
+        Console.WriteLine("Class B");
+    }
+}
+
+class C : A
+{
+    public override void Print()
+    {
+        Console.WriteLine("Class C");
+    }
+}
+
+//Here class D inherits both B & C class and doesn't implement the "Print" method so when class c object invokes the Print method their arises an ambiguity of whcih method to be invoked B's or C's. This ambiguit is know as the Diamond problem.
+class D: B, C
+{
+    
+}
+*/
+
+//class Program : I1, I2
+//class Program: Vehicle
+class Program
 {
     public static void Main(string[] args)
     {
@@ -452,12 +500,12 @@ class Program : I1, I2
         */
 
         //Interfaces
+        /*
         TEG teg = new TEG();
         teg.setName("TEG Global Infrastructures Pvt Ltd");
         teg.setNumberOfEmployees(18);
         Console.WriteLine($"Company details:\n{teg}");
         teg.test();
-
 
         Program P = new Program();
 
@@ -470,13 +518,35 @@ class Program : I1, I2
         //or
         I2 i2 = new Program(); //As we know that a base class reference can be used to create an object of child class
         i2.print();
+        */
+
+        //Abstract related code
+
+        /*Vehicle vehicle = new Program();
+        vehicle.startVehicle();
+
+        vehicle.honk();
+        */
+
+
+        //Indirectly achieving Mutliple inheritance using interfaces
+        /*
+        AB ab = new AB();
+        ab.APrint();
+        ab.BPrint();
+        */
+
     }
+
+
+
 
     //Note: A class implementing an Interface (I1) which inturn inherits another interface (I2), should implement all the methods of Interface (I1) & Interface (I2).
 
     //Explicit impletation for interface methods
 
     //Default method implementation - I1 inteface
+    /*
     public void print()
     {
         Console.WriteLine("I1 interface print method");
@@ -487,6 +557,21 @@ class Program : I1, I2
     {
         Console.WriteLine("I2 interface print mehtod");
     }
+    */
+
+
+    //Abstract type entities (classes, methods, etc)
+    /*
+    public override void startVehicle()
+    {
+        Console.WriteLine("Vehicle Started.");
+    }
+    */
+
+    
+
+
+
 }
 
 

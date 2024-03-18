@@ -1,0 +1,15 @@
+﻿using System;
+
+
+
+class DelegatesAsFunctionParams
+{
+}
+
+
+
+
+
+
+
+
