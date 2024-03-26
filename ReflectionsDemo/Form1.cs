@@ -13,9 +13,6 @@ namespace ReflectionsDemo
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            lstProperties.Items.Clear();
-            lstMethods.Items.Clear();
-            lstConstructors.Items.Clear();
         }
 
         private void button1_Click(object sender, EventArgs e)
