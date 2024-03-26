@@ -22,6 +22,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExceptionHandling", "Except
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Enums", "Enums\Enums.csproj", "{2AA3E9AB-BDB0-4A91-BD18-E996A9EB113C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReflectionsDemo", "ReflectionsDemo\ReflectionsDemo.csproj", "{616BC204-EFDE-4F4D-94A8-39E4945D0351}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -56,6 +58,10 @@ Global
 		{2AA3E9AB-BDB0-4A91-BD18-E996A9EB113C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2AA3E9AB-BDB0-4A91-BD18-E996A9EB113C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2AA3E9AB-BDB0-4A91-BD18-E996A9EB113C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{616BC204-EFDE-4F4D-94A8-39E4945D0351}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{616BC204-EFDE-4F4D-94A8-39E4945D0351}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{616BC204-EFDE-4F4D-94A8-39E4945D0351}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{616BC204-EFDE-4F4D-94A8-39E4945D0351}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
