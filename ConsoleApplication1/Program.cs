@@ -102,6 +102,17 @@ class Program
         mulDelOne += x => x * x * x;
         Console.WriteLine(mulDelOne(5));
 
+
+        //Attributes in C# - attrubutes are class that attach some metadata to classes, methods,properties, etc.
+        Console.WriteLine(Attributes.Add(9, 10));
+        int[] nums = { 1, 2, 3, 4, 5 };
+        List<int> numbers = new List<int>();
+        foreach(int i in nums)
+        {
+            numbers.Add(i);
+        }
+        Console.WriteLine(Attributes.Add(numbers));
+
     }
 
     public static void Hello(string Message)
@@ -114,5 +125,9 @@ class Program
     {
         return employee.Experience >= 5;
     }
+
+
+
+
 
 }
