@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using ConsoleApplication1;
 
 
 //Delegates - A delegate a type safe function pointer.
@@ -67,7 +68,7 @@ class Program
 
         List<Employee> employeeList = new List<Employee>();
 
-        employeeList.Add(new Employee(101, "Shivaranjani", 500000, 5));
+        employeeList.Add(new Employee(101, "RamaLaksmi", 500000, 5));
         employeeList.Add(new Employee(101, "Ganesh", 400000, 3));
         employeeList.Add(new Employee(101, "Shivesh", 300000, 4));
         employeeList.Add(new Employee(101, "Rohith", 600000, 6));
@@ -76,8 +77,6 @@ class Program
         //Using Delegate to decouple the criterion whcih was hardcoded in the employee entity
         IsPromotable isEligibleForPromotion = new IsPromotable(Promote);
         Employee.Promotable(employeeList, isEligibleForPromotion);
-
-
 
         /*
          * Using lambda expressions to cut short the code
@@ -113,6 +112,8 @@ class Program
         }
         Console.WriteLine(Attributes.Add(numbers));
 
+        //LateBinding Demo:
+        LateBindingDemo lb = new LateBindingDemo();
     }
 
     public static void Hello(string Message)
