@@ -41,6 +41,8 @@ public class Employee
                 Console.WriteLine("Employee not elilgible for Promotion...!");
              */
 
+
+
             /*
              * Decoupling the Employee class with the use of delgates
              */
@@ -106,7 +108,7 @@ class Program
         Console.WriteLine(Attributes.Add(9, 10));
         int[] nums = { 1, 2, 3, 4, 5 };
         List<int> numbers = new List<int>();
-        foreach(int i in nums)
+        foreach (int i in nums)
         {
             numbers.Add(i);
         }
@@ -114,6 +116,32 @@ class Program
 
         //LateBinding Demo:
         LateBindingDemo lb = new LateBindingDemo();
+
+        //GenericsDemo:
+        GenericsDemo genericsDemo = new GenericsDemo();
+        //Here reusing the (Generic function) same function AreEqual with different param types 
+        Console.WriteLine(genericsDemo.AreEqual<string>("Shiv", "Dilip"));
+        Console.WriteLine(genericsDemo.AreEqual<int>(10, 10));
+        Console.WriteLine(genericsDemo.AreEqual<float>(10.12f, 10.50f));
+
+
+        //Making a class generic - used widely in collection based classes like List etc.
+        GenericDemo1<int> genericsDemo1 = new GenericDemo1<int>();
+        Console.WriteLine(genericsDemo1.CombineVars(10, 29));
+
+
+        GenericDemo1<bool> genericsDemo2 = new GenericDemo1<bool>();
+        try
+        {
+            Console.WriteLine(genericsDemo2.CombineVars(true, false));
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e.Message);
+        }
+
+        GenericDemo1<string> genericsDemo3 = new GenericDemo1<string>();
+        Console.WriteLine(genericsDemo3.CombineVars("Dilip", "Kumar"));
     }
 
     public static void Hello(string Message)
